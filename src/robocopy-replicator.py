@@ -12,7 +12,7 @@
 # Configuration
 # -----------------------------------------------------------------------------
 
-APP_VERSION = "1.0.2"
+APP_VERSION = "1.0.3"
 
 DEFAULT_WIDTH = 1200
 NORMAL_HEIGHT = 800
@@ -679,8 +679,11 @@ class RobocopyReplicator:
         target_root = Path(self.target_folder.get())
 
         if source_path.is_dir():
+            # Robocopy copies the CONTENTS of a source directory into its
+            # destination directory. Never append the source folder name:
+            # this also handles drive roots such as D:\\ -> E:\\.
             robocopy_source = source_path
-            robocopy_target = target_root / source_path.name
+            robocopy_target = target_root
             filename = None
         else:
             robocopy_source = source_path.parent
