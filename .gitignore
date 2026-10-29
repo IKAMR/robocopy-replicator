@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Runtime configuration and local user data
+*_settings.json
+*_last_job.json
+*_profiles/
+*_jobs/
+robocopy_log/
+*.log
+
+# Local development / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
